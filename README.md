@@ -2,6 +2,7 @@ ofxAlphaMask
 ================
   
 Simple alpha masking addon.  
+![screenshot](screenshot.png)  
   
 # Usage
 
