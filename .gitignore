@@ -1,0 +1,27 @@
+.DS_Store
+.gitkeep
+
+bin/*
+!data
+
+# Mac
+*.app
+resources/*
+config.make
+*.xcodeproj
+Makefile
+openFrameworks-Info.plist
+Project.xcconfig
+addons.make
+
+# Win
+*.sdf
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+addons.make
+icon.aps
+icon.rc
+obj/*
+.vs
