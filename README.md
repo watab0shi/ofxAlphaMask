@@ -3,7 +3,7 @@ ofxAlphaMask
   
 Simple alpha masking addon.  
   
-#Usage
+# Usage
 
 ofApp.h
 ```
