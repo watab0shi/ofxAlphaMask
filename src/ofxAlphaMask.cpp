@@ -8,12 +8,13 @@ string   ofxAlphaMask::fragSrc = R"(
 
 uniform sampler2DRect tex0;
 uniform sampler2DRect maskTex;
+uniform float         alpha;
 
 void main( void ) {
   vec2  pos    = gl_TexCoord[ 0 ].st;
   vec3  src    = texture2DRect( tex0, pos ).rgb;
   float mask   = texture2DRect( maskTex, pos ).r;
-  gl_FragColor = vec4( src, mask );
+  gl_FragColor = vec4( src, mask * alpha );
 }
 )";
 
@@ -35,6 +36,7 @@ void ofxAlphaMask::begin( ofTexture& _tex )
 {
   ofxAlphaMask::shader.begin();
   ofxAlphaMask::shader.setUniformTexture( "maskTex", _tex, 1 );
+  ofxAlphaMask::shader.setUniform1f( "alpha", ofGetStyle().color.a / 255. );
 }
 
 //--------------------------------------------------------------

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ofGraphics.h"
 #include "ofShader.h"
 
 
