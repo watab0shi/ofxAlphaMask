@@ -53,9 +53,9 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw(){
   // srcFbo を maskFbo でアルファマスク 黒 -> a = 0.0, 白 -> a = 1.0
+  ofSetColor( 255, 255 );
   alphaMask.begin( maskFbo.getTexture() );
   {
-    ofSetColor( 255 );
     srcFbo.draw( 0, 0 );
   }
   alphaMask.end();

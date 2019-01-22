@@ -2,7 +2,7 @@
 
 ofShader ofxAlphaMask::shader;
 
-string   ofxAlphaMask::fragSrc = R"(
+std::string ofxAlphaMask::fragSrc = R"(
 #version 120
 #extension GL_ARB_texture_rectangle : enable
 
@@ -13,8 +13,9 @@ uniform float         alpha;
 void main( void ) {
   vec2  pos    = gl_TexCoord[ 0 ].st;
   vec3  src    = texture2DRect( tex0, pos ).rgb;
-  float mask   = texture2DRect( maskTex, pos ).r;
-  gl_FragColor = vec4( src, mask * alpha );
+  vec3  mask   = texture2DRect( maskTex, pos ).rgb;
+  float bright = ( mask.r + mask.g + mask.b ) / 3.0;
+  gl_FragColor = vec4( src, bright * alpha );
 }
 )";
 

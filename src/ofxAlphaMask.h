@@ -6,9 +6,9 @@
 
 class ofxAlphaMask
 {
-  static ofShader shader;
-  static string   fragSrc;
-  static bool     bLoaded;
+  static ofShader    shader;
+  static std::string fragSrc;
+  static bool        bLoaded;
   
 public:
   ofxAlphaMask();
